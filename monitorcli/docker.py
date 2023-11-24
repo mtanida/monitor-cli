@@ -1,7 +1,8 @@
 """
-Implements Container CLI
+Implements ContainerMonitor class
 
-CLI is used to monitor a container's resource usage and log to a user-specified file.
+ContainerMonitor is used to manage the creation, deletion,
+starting, and stopping of the monitor container.
 
 Author:
     Masatoshi Tanida

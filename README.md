@@ -9,7 +9,7 @@ This example application consists of 3 parts:
 2. monitor container - This is the container responsible for monitoring the target container
 3. monitor-cli - This is a Python CLI that is used to start, stop, and configure the monitor container
 
-I chose to use a container to implement the monitoring process for several reasons. First, we can specify a restart policy so that the monitoring can resume in the event of a crash or reboot. Second, containers are _somewhat_ OS-agnostic, unlike an alternative implementation, such as a SystemD service whcih are specific to *NIX variants. Finally, Docker's tools and API make containers easier to manage than a detatched sub process.
+I chose to use a container to implement the monitoring process for several reasons. First, we can specify a restart policy so that the monitoring can resume in the event of a crash or reboot. Second, containers are _somewhat_ OS-agnostic, unlike an alternative implementation, such as a systemd service which is specific to *NIX variants. Finally, Docker's tools and API make containers easier to manage than a detatched sub process.
 
 The name of the monitor contaner is always `monitor-<name of target container>`. By ensuring this naming convention, we can detect if a container is already being monitored. Logs are written to a CSV file in the project's root folder. I chose this rather than a conventional log directory, such as `/var/log` to keep the application as OS-agnostic as possible and to prevent the need to run the application with privilege escalation.
 
